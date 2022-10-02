@@ -10,7 +10,15 @@ namespace Lab4
     public class Plants
     {
         public int height = 9;
-        
+        public virtual string GetInfo()
+        {
+            var str = "";
+            str += String.Format("\nВысота: {0}", this.height);
+            str += "\n";
+            return str;
+        }
+
+        public static Random rnd = new Random();
 
         
     }
@@ -23,8 +31,27 @@ namespace Lab4
         public FlowerColour colour = FlowerColour.Синий;
         public FlowerType type = FlowerType.Полевые;
 
-       
-        
+        public override string GetInfo()
+        {
+            var str = "Цветок";
+
+            str += String.Format("\nКоличество лепестков: {0}", this.petalCount);
+            str += String.Format("\nЦвет: {0}", this.colour);
+            str += String.Format("\nТип цветка: {0}", this.type);
+            str += base.GetInfo();
+            return str;
+        }
+
+        public static Flowers Generate()
+        {
+            return new Flowers
+            {
+                height = 1 + rnd.Next() % 5,
+                petalCount = 1 + rnd.Next() % 30,
+                colour = (FlowerColour)rnd.Next(5),
+                type = (FlowerType)rnd.Next(2)
+            };
+        }
         
     }
 
@@ -33,7 +60,25 @@ namespace Lab4
         public bool withFlower = true;
         public int branchCount = 0;
 
-       
+        public override string GetInfo()
+        {
+            var str = "Кустарник";
+
+            str += String.Format("\nНаличие цветков: {0}", this.withFlower);
+            str += String.Format("\nКоличество веток: {0}", this.branchCount);
+            str += base.GetInfo();
+            return str;
+        }
+
+        public static Bush Generate()
+        {
+            return new Bush
+            {
+                height = 1 + rnd.Next() % 10,
+                withFlower = rnd.Next() % 2 == 0,
+                branchCount = 1 + rnd.Next() % 10
+            };
+        }
         
     }
 
@@ -43,7 +88,25 @@ namespace Lab4
         public int radius = 0;
         public TreeType type = TreeType.Листовые;
 
-       
+        public override string GetInfo()
+        {
+            var str = "Дерево";
+
+            str += String.Format("\nРадиус: {0}", this.radius);
+            str += String.Format("\nТип дерева: {0}", this.type);
+            str += base.GetInfo();
+            return str;
+        }
+
+        public static Tree Generate()
+        {
+            return new Tree
+            {
+                height = 1 + rnd.Next() % 100,
+                radius = 10 + rnd.Next() % 40,
+                type = (TreeType)rnd.Next(2)
+            };
+        }
         
     }
 }

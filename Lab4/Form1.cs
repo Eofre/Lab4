@@ -16,5 +16,25 @@ namespace Lab4
         {
             InitializeComponent();
         }
+
+        private void btnRefill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtInfo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtOut_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGet_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
