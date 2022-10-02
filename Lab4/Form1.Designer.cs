@@ -58,7 +58,7 @@ namespace Lab4
             // 
             this.txtOut.Location = new System.Drawing.Point(12, 185);
             this.txtOut.Name = "txtOut";
-            this.txtOut.Size = new System.Drawing.Size(152, 96);
+            this.txtOut.Size = new System.Drawing.Size(201, 96);
             this.txtOut.TabIndex = 2;
             this.txtOut.Text = "";
             this.txtOut.TextChanged += new System.EventHandler(this.txtOut_TextChanged);
@@ -77,7 +77,7 @@ namespace Lab4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 293);
+            this.ClientSize = new System.Drawing.Size(353, 293);
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.txtOut);
             this.Controls.Add(this.txtInfo);
